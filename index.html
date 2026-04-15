@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="task-list-container">
+      <button class="new-task-btn" id="newTaskBtn">+ New Task</button>
+      <ul class="task-list" id="taskList"></ul>
+    </div>
+  </div>
+
+  <!-- Task Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="taskModal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">New Task</h2>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="field">
+          <label>Task Name</label>
+          <input type="text" id="taskNameInput" placeholder="What needs to be done?" />
+        </div>
+        <div class="field">
+          <label>Description <span class="optional">(optional)</span></label>
+          <textarea id="taskDescInput" placeholder="Add some details..."></textarea>
+        </div>
+        <div class="field">
+          <label>Due Date <span class="optional">(optional)</span></label>
+          <input type="date" id="taskDueInput" />
+        </div>
+        <div class="field">
+          <label>Recurring</label>
+          <div class="toggle-group">
+            <button class="toggle-btn active" data-value="none" id="recurNone">None</button>
+            <button class="toggle-btn" data-value="weekly" id="recurWeekly">Weekly</button>
+            <button class="toggle-btn" data-value="monthly" id="recurMonthly">Monthly</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" id="btnCancel">Cancel</button>
+        <button class="btn-save" id="btnSave">Save Task</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
